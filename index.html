@@ -19,11 +19,12 @@
   <div class="main-wrapper">
     <div class="app-container" id="app">
       
-      <!-- 4. Creo una lista nel DOM -->
+      <!-- 4. Creo una lista nel DOM che verrà popolata -->
       <ul>
-        
         <li v-for="email in emails">{{ email }}</li>
       </ul>
+
+      <h2>L'errore è: {{ errorMessage }}</h2>
 
     </div>
   </div>
