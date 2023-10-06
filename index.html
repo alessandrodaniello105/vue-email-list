@@ -19,6 +19,13 @@
   <div class="main-wrapper">
     <div class="app-container" id="app">
       
+      <!-- 4. Creo una lista nel DOM -->
+      <ul>
+        <template v-for="email in emails">
+          <li v-if="!emailsLimit">{{ email }}</li>
+        </template>
+      </ul>
+
     </div>
   </div>
   
