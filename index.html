@@ -18,13 +18,17 @@
 
   <div class="main-wrapper">
     <div class="app-container" id="app">
+
+      <div v-if="isLoading" class="loading">
+        <h3>Loading emails...</h3>
+      </div>
       
       <!-- 4. Creo una lista nel DOM che verrà popolata -->
-      <ul>
+      <ol v-else>
         <li v-for="email in emails">{{ email }}</li>
-      </ul>
+      </ol>
 
-      <h2>L'errore è: {{ errorMessage }}</h2>
+      <h2 v-if="isError">L'errore è: {{ errorMessage }}</h2>
 
     </div>
   </div>

@@ -9,7 +9,9 @@ createApp({
       emails: [],
       emailStr: '',
       counter: 0,
-      errorMessage: ''
+      errorMessage: '',
+      isError: false,
+      isLoading: true
     }
   },
 
@@ -32,6 +34,8 @@ createApp({
 
         })
         .catch((error) => {
+
+          this.isError = true;
 
           this.errorMessage = error.code;
 
@@ -56,6 +60,10 @@ createApp({
     this.getConsole();
 
     this.generateEmails()
+
+    setTimeout(() => {
+      this.isLoading = false
+    }, 500)
 
     console.log(this.emails);
 
