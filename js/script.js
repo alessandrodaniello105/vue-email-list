@@ -24,13 +24,12 @@ createApp({
      axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
         .then((email) => {
 
-          if (this.counter == 10) {
-            this.emailsLimit = true;
-          };
+          
 
           let emailStrTest = email.data.response;
-          this.emails.push(emailStrTest);
-          this.counter++
+          // this.emails.push(emailStrTest);
+          // this.generateEmails(emailStrTest);
+          this.emails.push(emailStrTest)
 
 
         })
@@ -43,16 +42,31 @@ createApp({
     },
 
     // 5. Ciclo gli elementi della lista con il mio array compilato
-    // generateEmails() {
+    // generateEmails(emailStrTest) {
 
     //   const emailsLimit = 10;
 
-    //   // for(let email = 0; this.emails.length = emailsLimit; email++) {
-    //   //   this.getEmailAPI();
+    //   this.emailStr = emailStrTest;
 
-    //   // }
+    //     for(this.counter = 0; this.counter === emailsLimit; this.counter++) {
+    //       if (!this.emails.includes(this.emailStr)) {
+    //         this.emails.push(this.emailStr);
+    //         this.counter++
+    //       } else {
+    //         console.log('alfonso')
+    //       }
+    //       console.log(this.counter)
+  
+  
+    //     }
 
-    // }
+    testEmailGenerator() {
+     this.getEmailAPI();
+     this.getEmailAPI();
+     this.getEmailAPI();
+     this.getEmailAPI();
+
+    }
 
 
   },
@@ -61,7 +75,7 @@ createApp({
 
     this.getConsole();
 
-    this.getEmailAPI();
+    this.testEmailGenerator();
 
   
     console.log(this.emails);
